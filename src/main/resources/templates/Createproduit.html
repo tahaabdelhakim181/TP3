@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{Layout1}">
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div  class="p-3" layout:fragment="content">
+    <h1>Create votre produit</h1>
+     <form  method="post" th:action="@{/admin/saveproduit}">
+        <div class="mb-3">
+            <label class="form-label">Nome de produit</label>
+            <input type="text" name="name" class="form-control" th:value="${product.name}" id="">
+            <span class="text-danger" th:errors="${product.name}"></span>
+        </div>
+
+         <div class="mb-3">
+             <label class="form-label">price</label>
+             <input type="text" name="price" class="form-control" th:value="${product.price}" id="">
+             <span class="text-danger" th:errors="${product.price}"></span>
+
+         </div>
+
+         <div class="mb-3">
+             <label class="form-label">quantity</label>
+             <input type="text" name="quantity" class="form-control" th:value="${product.quantity}" id="">
+             <span class="text-danger" th:errors="${product.quantity}"></span>
+         </div>
+         <button id="submit" type="submit" class="btn btn-primary">Create produit</button>
+     </form>
+    </div>
+</body>
+
+</html>
